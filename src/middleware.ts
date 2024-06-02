@@ -27,7 +27,7 @@ export async function middleware(request: NextRequest) {
 
   const code: string = await precompute(precomputedFlags, outsideFlags);
 
-  /** reweritten URL with flag code at the base of the path */
+  /** rewritten URL with flag code at the base of the path */
   const url = new URL(
     `/${code}${request.nextUrl.pathname}${request.nextUrl.search}`,
     request.url,

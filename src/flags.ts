@@ -1,29 +1,24 @@
-import { unstable_flag as flag } from "@vercel/flags/next";
+import { type Flag, unstable_flag as flag } from "@vercel/flags/next";
 
-export const colorFlag = flag<"green" | "blue" | "red">({
+export const colorFlag = flag<"r" | "g" | "b">({
   key: "color",
   /** Logic for selecting the flag, you can access data passed
    * in by middleware through unstable_getPrecomputationContext
    * const context = unstable_getPrecomputationContext() */
   async decide() {
-    /* Synthetic flag selection */
-    return Math.random() < 0.33
-      ? "blue"
-      : Math.random() < 0.5
-        ? "green"
-        : "red";
+    return Math.random() < 0.33 ? "r" : Math.random() < 0.5 ? "g" : "b";
   },
-  description: "Color options.",
-  defaultValue: "green",
+  description: "Color options",
+  defaultValue: "g",
   options: [
-    { value: "blue", label: "Blue" },
-    { value: "green", label: "Green" },
-    { value: "red", label: "Red" },
+    { value: "r", label: "Red" },
+    { value: "g", label: "Green" },
+    { value: "b", label: "Blue" },
   ],
 });
 
 export const showFooterFlag = flag<boolean>({
-  key: "showFooter",
+  key: "footer",
   /** Logic for selecting the flag, you can access data passed
    * in by middleware through unstable_getPrecomputationContext
    * const context = unstable_getPrecomputationContext() */
@@ -31,7 +26,7 @@ export const showFooterFlag = flag<boolean>({
     /* Synthetic flag selection, footer 80% of the time */
     return Math.random() < 0.8 ? true : false;
   },
-  description: "Show footer.",
+  description: "Footer",
   defaultValue: true,
   options: [
     { value: true, label: "Show" },
@@ -39,7 +34,10 @@ export const showFooterFlag = flag<boolean>({
   ],
 });
 
-export const precomputedFlags = [colorFlag, showFooterFlag] as const;
+export const precomputedFlags: readonly Flag<any>[] = [
+  colorFlag,
+  showFooterFlag,
+] as const;
 
 export interface FlagProps {
   params: {

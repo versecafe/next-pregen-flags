@@ -1,10 +1,10 @@
+import Image from "next/image";
 import {
-  FlagProps,
+  type FlagProps,
   colorFlag,
   precomputedFlags,
   showFooterFlag,
 } from "@/flags";
-import Image from "next/image";
 import { cn } from "@/utils";
 
 export default async function Home({
