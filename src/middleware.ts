@@ -9,10 +9,12 @@ export const config = {
    * - _vercel (Vercel specific files)
    * - _public (public files)
    * - favicon (favicon)
+   * .well-known (well-known files)
    * This is to minimize unnecessary middleware
    * invocations and to avoid the flags layer. */
   matcher: {
-    source: "/((?!_next/static|_next/image|_vercel|_public|favicon).*)",
+    source:
+      "/((?!_next/static|_next/image|_vercel|_public|favicon|.well-known).*)",
   },
 };
 
