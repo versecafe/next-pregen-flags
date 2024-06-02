@@ -57,4 +57,6 @@ To learn more about Next.js, take a look at the following resources:
 - Try out the Vercel Toolbar to override flags as needed
 - Create your own flags in the `src/flags.ts` file
 - Implement custom logic for your feature flags
-- Connect an exteneral flag provider such as LaunchDarkly or Hypertunr
+- Connect an exteneral flag provider such as LaunchDarkly or Hypertune
+
+<img width="600" alt="image" src="https://github.com/versecafe/next-pregen-flags/assets/147033096/9285acdb-318d-4da9-9d54-847fa9c1ca23">
