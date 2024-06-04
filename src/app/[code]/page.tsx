@@ -10,7 +10,7 @@ import { cn } from "@/utils";
 export default async function Home({
   params,
 }: FlagProps): Promise<JSX.Element> {
-  const color: string = await colorFlag(params.code, precomputedFlags);
+  const color: "r" | "g" | "b" = await colorFlag(params.code, precomputedFlags);
   const showFooter: boolean = await showFooterFlag(
     params.code,
     precomputedFlags,
@@ -61,9 +61,9 @@ export default async function Home({
             <span
               className={cn(
                 "text-lg",
-                color === "green" && "text-green-500",
-                color === "blue" && "text-blue-500",
-                color === "red" && "text-red-500",
+                color === "r" && "text-red-500",
+                color === "g" && "text-green-500",
+                color === "b" && "text-blue-500",
               )}
             >
               ▲
