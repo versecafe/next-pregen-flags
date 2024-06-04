@@ -59,8 +59,6 @@ To learn more about Next.js, take a look at the following resources:
 - Implement custom logic for your feature flags
 - Connect an exteneral flag provider such as LaunchDarkly or Hypertune
 
-<<<<<<< HEAD
-
 ## Understanding the Quirks
 
 - Inside the `public` directory there is a `_public` directory. This is a workaround to be able to exempt the route from the flags rewrite in `src/middleware.ts`.
